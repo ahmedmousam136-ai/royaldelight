@@ -1,55 +1,1974 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>The Royal Delight – Dusk Palace</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Royal Delight - Dusk Palace</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --forest:#0F2318;
-  --forest2:#163524;
-  --forest3:#1E4530;
-  --terra:#C4622D;
-  --terra2:#D97040;
-  --saffron:#DFA020;
-  --saffron2:#F0B830;
-  --cream:#F0E8D5;
-  --cream2:#D8CBAF;
-  --white:#FAFAF5;
-  --muted:rgba(240,232,213,.55);
-  --pad:clamp(3.5rem,8vw,6.5rem);
-}
-html{scroll-behavior:smooth}
-body{font-family:'Space Grotesk',sans-serif;background:var(--forest);color:var(--cream2);overflow-x:hidden;line-height:1.75}
-img{max-width:100%;display:block}
-a{text-decoration:none;color:inherit}
-::-webkit-scrollbar{width:5px}
-::-webkit-scrollbar-track{background:var(--forest)}
-::-webkit-scrollbar-thumb{background:var(--terra);border-radius:3px}
 
-/* ━━ NAV ━━ */
-.nav{
-  position:fixed;top:0;left:0;width:100%;z-index:1000;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 clamp(1.2rem,5vw,3.5rem);height:66px;
-  transition:background .35s,border-color .35s;
+/* ======================================================
+   RESET AND CUSTOM PROPERTIES
+====================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-.nav.filled{background:rgba(10,27,14,.94);backdrop-filter:blur(18px);border-bottom:1px solid rgba(196,98,45,.18)}
-.nav-logo{
-  display:flex;align-items:center;gap:.9rem;
+
+:root {
+  --forest:    #0F2318;
+  --forest2:   #163524;
+  --forest3:   #1E4530;
+  --terra:     #C4622D;
+  --terra2:    #D97040;
+  --saffron:   #DFA020;
+  --saffron2:  #F0B830;
+  --cream:     #F0E8D5;
+  --cream2:    #D8CBAF;
+  --white:     #FAFAF5;
+  --muted:     rgba(240, 232, 213, 0.55);
+  --section-padding: clamp(3.5rem, 8vw, 6.5rem);
 }
-.nav-logo-mark{
-  width:38px;height:38px;border-radius:50%;
-  border:1.5px solid var(--terra);
-  display:flex;align-items:center;justify-content:center;
-  font-family:'DM Serif Display',serif;font-size:1.1rem;
-  color:var(--terra);flex-shrink:0;
+
+html {
+  scroll-behavior: smooth;
 }
-.nav-logo-text{
-  font-family:'DM Serif Display',serif;
-  font-size:clamp(.95rem,2vw,1.15rem);color:var(--cream);
-  line-height:1.2;
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: var(--forest);
+  color: var(--cream2);
+  overflow-x: hidden;
+  line-height: 1.75;
 }
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--forest); }
+::-webkit-scrollbar-thumb { background: var(--terra); border-radius: 3px; }
+
+
+/* ======================================================
+   NAVIGATION
+====================================================== */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(1.2rem, 5vw, 3.5rem);
+  height: 66px;
+  transition: background 0.35s, border-color 0.35s;
+}
+
+.nav.filled {
+  background: rgba(10, 27, 14, 0.94);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(196, 98, 45, 0.18);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.nav-logo-mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1.5px solid var(--terra);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.1rem;
+  color: var(--terra);
+  flex-shrink: 0;
+}
+
+.nav-logo-text {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  color: var(--cream);
+  line-height: 1.2;
+}
+
+.nav-logo-text small {
+  display: block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.6em;
+  letter-spacing: 0.2em;
+  color: var(--saffron);
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.9rem, 2.5vw, 2.2rem);
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cream2);
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--saffron);
+}
+
+.nav-cta {
+  padding: 0.42rem 1.15rem;
+  border: 1.5px solid var(--terra);
+  border-radius: 40px;
+  color: var(--terra) !important;
+  transition: background 0.2s, color 0.2s !important;
+}
+
+.nav-cta:hover {
+  background: var(--terra);
+  color: var(--forest) !important;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.burger span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--cream);
+  transition: all 0.3s;
+}
+
+.burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.burger.open span:nth-child(2) { opacity: 0; }
+.burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+.mob-menu {
+  display: none;
+  position: fixed;
+  inset: 66px 0 0 0;
+  background: rgba(10, 22, 13, 0.97);
+  backdrop-filter: blur(20px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.2rem;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.mob-menu.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mob-menu a {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.8rem;
+  color: var(--cream);
+  transition: color 0.2s;
+}
+
+.mob-menu a:hover {
+  color: var(--saffron);
+}
+
+.mob-menu .nav-cta {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+}
+
+
+/* ======================================================
+   HERO
+====================================================== */
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: -5%;
+  background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.38) saturate(0.7);
+  animation: bgDrift 20s ease-in-out infinite alternate;
+}
+
+@keyframes bgDrift {
+  0%   { transform: scale(1.05) translate(0, 0); }
+  100% { transform: scale(1.08) translate(-1%, -1.5%); }
+}
+
+.hero-arch {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.hero-arch-outer {
+  width: min(480px, 80vw);
+  height: min(600px, 90vh);
+  border: 1px solid rgba(196, 98, 45, 0.2);
+  border-radius: 240px 240px 0 0;
+  position: absolute;
+  bottom: 0;
+}
+
+.hero-arch-inner {
+  width: min(380px, 64vw);
+  height: min(500px, 78vh);
+  border: 1px solid rgba(223, 160, 32, 0.1);
+  border-radius: 190px 190px 0 0;
+  position: absolute;
+  bottom: 0;
+}
+
+.hero-corner-tl {
+  position: absolute;
+  top: 90px;
+  left: 2rem;
+  width: 80px;
+  height: 80px;
+  border-top: 1px solid rgba(223, 160, 32, 0.3);
+  border-left: 1px solid rgba(223, 160, 32, 0.3);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-corner-br {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  width: 80px;
+  height: 80px;
+  border-bottom: 1px solid rgba(223, 160, 32, 0.3);
+  border-right: 1px solid rgba(223, 160, 32, 0.3);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: clamp(2rem, 6vw, 4rem);
+  max-width: 820px;
+}
+
+.hero-kicker {
+  display: inline-block;
+  background: var(--terra);
+  color: var(--white);
+  font-size: 0.66rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.9rem;
+  border-radius: 40px;
+  margin-bottom: 1.8rem;
+  font-weight: 500;
+  opacity: 0;
+  animation: fadeUp 0.7s 0.2s forwards;
+}
+
+.hero-h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(3rem, 8.5vw, 7rem);
+  line-height: 0.96;
+  color: var(--white);
+  opacity: 0;
+  animation: fadeUp 0.9s 0.4s forwards;
+}
+
+.hero-h1 .outline {
+  -webkit-text-stroke: 1.5px var(--saffron);
+  color: transparent;
+}
+
+.hero-h1 .italic {
+  font-style: italic;
+  color: var(--saffron);
+}
+
+.hero-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.8rem auto;
+  opacity: 0;
+  animation: fadeUp 0.7s 0.65s forwards;
+}
+
+.hero-divider::before,
+.hero-divider::after {
+  content: '';
+  width: 48px;
+  height: 1px;
+  background: rgba(240, 232, 213, 0.3);
+}
+
+.hero-divider i {
+  color: var(--saffron);
+  font-size: 0.7rem;
+}
+
+.hero-sub {
+  font-size: clamp(0.85rem, 1.8vw, 0.98rem);
+  color: rgba(240, 232, 213, 0.7);
+  max-width: 500px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.8s forwards;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2.4rem;
+  opacity: 0;
+  animation: fadeUp 0.8s 1s forwards;
+}
+
+.btn-terra {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2rem;
+  background: var(--terra);
+  color: var(--white);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 40px;
+  transition: background 0.25s, transform 0.25s;
+}
+
+.btn-terra:hover {
+  background: var(--terra2);
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2rem;
+  border: 1.5px solid rgba(240, 232, 213, 0.3);
+  color: var(--cream);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 40px;
+  transition: border-color 0.25s, color 0.25s;
+}
+
+.btn-ghost:hover {
+  border-color: var(--saffron);
+  color: var(--saffron);
+}
+
+.hero-stats {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: clamp(2rem, 6vw, 5rem);
+}
+
+.h-stat .num {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
+  color: var(--saffron);
+  display: block;
+  line-height: 1;
+}
+
+.h-stat .lbl {
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ======================================================
+   FEATURES STRIP
+====================================================== */
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: var(--forest2);
+  border-top: 1px solid rgba(196, 98, 45, 0.2);
+  border-bottom: 1px solid rgba(196, 98, 45, 0.2);
+}
+
+.feat {
+  padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1rem, 3vw, 2rem);
+  border-right: 1px solid rgba(196, 98, 45, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.7rem;
+  transition: background 0.3s;
+}
+
+.feat:last-child {
+  border-right: none;
+}
+
+.feat:hover {
+  background: rgba(196, 98, 45, 0.06);
+}
+
+.feat-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid rgba(196, 98, 45, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--terra);
+  font-size: 1rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+.feat:hover .feat-icon {
+  background: var(--terra);
+  color: var(--forest);
+}
+
+.feat h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.05rem;
+  color: var(--cream);
+  font-weight: 400;
+}
+
+.feat p {
+  font-size: 0.75rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+
+/* ======================================================
+   STORY SECTION
+====================================================== */
+
+.story {
+  padding: var(--section-padding) clamp(1.5rem, 7vw, 5.5rem);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 6vw, 6rem);
+  align-items: center;
+}
+
+.story-txt .eyebrow {
+  font-size: 0.68rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.story-txt .eyebrow::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(196, 98, 45, 0.3);
+  max-width: 60px;
+}
+
+.story-txt h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  color: var(--cream);
+  line-height: 1.1;
+  margin-bottom: 1.4rem;
+}
+
+.story-txt h2 em {
+  color: var(--terra);
+  font-style: italic;
+}
+
+.story-txt p {
+  font-size: 0.88rem;
+  color: var(--cream2);
+  margin-bottom: 0.9rem;
+  line-height: 1.85;
+}
+
+.story-pull {
+  border-left: 3px solid var(--saffron);
+  padding-left: 1.2rem;
+  margin: 1.5rem 0;
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  color: var(--cream);
+  font-size: 1.15rem;
+  line-height: 1.55;
+}
+
+.story-mosaic {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+
+.s-img {
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.s-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease, filter 0.4s;
+  filter: brightness(0.8) saturate(0.9);
+}
+
+.s-img:hover img {
+  transform: scale(1.04);
+  filter: brightness(1) saturate(1);
+}
+
+.s-img-big {
+  grid-column: 1 / 3;
+  height: clamp(180px, 28vw, 260px);
+}
+
+.s-img-sm {
+  height: clamp(130px, 18vw, 180px);
+}
+
+.s-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--forest);
+  border: 2px solid var(--saffron);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Serif Display', serif;
+  font-size: 0.72rem;
+  color: var(--saffron);
+  text-align: center;
+  line-height: 1.3;
+  z-index: 2;
+  padding: 0.4rem;
+}
+
+
+/* ======================================================
+   GALLERY
+====================================================== */
+
+.gallery-s {
+  padding: var(--section-padding) clamp(1.5rem, 7vw, 5.5rem);
+  background: var(--forest2);
+}
+
+.gallery-hd {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.g-eyebrow {
+  font-size: 0.68rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: 0.6rem;
+}
+
+.g-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  color: var(--cream);
+}
+
+.g-title em {
+  color: var(--terra);
+  font-style: italic;
+}
+
+.g-sub {
+  font-size: 0.8rem;
+  color: var(--muted);
+  max-width: 240px;
+  text-align: right;
+}
+
+.g-view {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 260px 200px;
+  gap: 0.5rem;
+}
+
+.g-cell {
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.g-cell img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.25, 0.8, 0.25, 1), filter 0.4s;
+  filter: brightness(0.78) saturate(0.85);
+}
+
+.g-cell:hover img {
+  transform: scale(1.08);
+  filter: brightness(0.95) saturate(1);
+}
+
+.g-cap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem 1.1rem;
+  background: linear-gradient(to top, rgba(10, 22, 13, 0.7) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.g-cell:hover .g-cap {
+  opacity: 1;
+}
+
+.g-cap span {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--saffron2);
+}
+
+.gc1 { grid-column: 1 / 3; grid-row: 1 / 3; }
+.gc2 { grid-column: 3 / 5; grid-row: 1; }
+.gc3 { grid-column: 5 / 7; grid-row: 1; }
+.gc4 { grid-column: 3 / 4;  grid-row: 2; }
+.gc5 { grid-column: 4 / 7;  grid-row: 2; }
+
+
+/* ======================================================
+   MENU
+====================================================== */
+
+.menu-s {
+  padding: var(--section-padding) clamp(1.5rem, 7vw, 5.5rem);
+  background: var(--forest);
+}
+
+.menu-hd {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.menu-eyebrow {
+  font-size: 0.68rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: 0.6rem;
+}
+
+.menu-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  color: var(--cream);
+}
+
+.menu-title em {
+  color: var(--terra);
+  font-style: italic;
+}
+
+.m-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.m-tab {
+  padding: 0.4rem 1.1rem;
+  background: rgba(240, 232, 213, 0.06);
+  color: var(--cream2);
+  border: 1px solid rgba(240, 232, 213, 0.1);
+  border-radius: 40px;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-height: 44px;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.m-tab.on,
+.m-tab:hover {
+  background: var(--terra);
+  color: var(--white);
+  border-color: var(--terra);
+}
+
+.m-panel {
+  display: none;
+}
+
+.m-panel.on {
+  display: block;
+}
+
+.menu-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(240, 232, 213, 0.07);
+  border-radius: 2px;
+  cursor: default;
+  transition: background 0.2s, padding 0.2s;
+}
+
+.menu-item:hover {
+  background: rgba(196, 98, 45, 0.04);
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+}
+
+.item-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.8rem;
+  color: rgba(223, 160, 32, 0.2);
+  line-height: 1;
+  width: 2.2rem;
+  text-align: center;
+  flex-shrink: 0;
+  transition: color 0.3s;
+}
+
+.menu-item:hover .item-num {
+  color: var(--saffron);
+}
+
+.item-body h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.2rem;
+  color: var(--cream);
+  font-weight: 400;
+  margin-bottom: 0.2rem;
+}
+
+.item-body p {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.item-dots {
+  border-bottom: 1px dotted rgba(240, 232, 213, 0.15);
+  flex: 1;
+}
+
+.item-price {
+  font-size: 1rem;
+  color: var(--saffron);
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+  letter-spacing: 0.04em;
+}
+
+
+/* ======================================================
+   CONTACT
+====================================================== */
+
+.contact-s {
+  padding: var(--section-padding) clamp(1.5rem, 7vw, 5.5rem);
+  background: var(--forest2);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-deco-outer {
+  position: absolute;
+  bottom: -120px;
+  right: -80px;
+  width: 460px;
+  height: 460px;
+  border-radius: 50% 50% 0 0;
+  border: 1px solid rgba(196, 98, 45, 0.08);
+  pointer-events: none;
+}
+
+.contact-deco-inner {
+  position: absolute;
+  bottom: -60px;
+  right: -20px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50% 50% 0 0;
+  border: 1px solid rgba(196, 98, 45, 0.06);
+  pointer-events: none;
+}
+
+.contact-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2.5rem, 6vw, 5rem);
+  align-items: start;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-eyebrow {
+  font-size: 0.68rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.contact-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--cream);
+  margin-bottom: 2rem;
+  line-height: 1.15;
+}
+
+.contact-title em {
+  color: var(--terra);
+  font-style: italic;
+}
+
+.cform {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.cform input,
+.cform textarea {
+  background: rgba(240, 232, 213, 0.04);
+  border: 1px solid rgba(240, 232, 213, 0.12);
+  color: var(--white);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.88rem;
+  padding: 0 1.1rem;
+  border-radius: 40px;
+  outline: none;
+  min-height: 50px;
+  width: 100%;
+  transition: border-color 0.25s, background 0.25s;
+}
+
+.cform input:focus,
+.cform textarea:focus {
+  border-color: var(--terra);
+  background: rgba(196, 98, 45, 0.06);
+}
+
+.cform textarea {
+  padding: 0.9rem 1.3rem;
+  min-height: 130px;
+  resize: vertical;
+  border-radius: 16px;
+}
+
+.cform ::placeholder {
+  color: rgba(240, 232, 213, 0.3);
+}
+
+.cform-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+}
+
+.btn-cta {
+  padding: 0.9rem 2.2rem;
+  background: var(--terra);
+  color: var(--white);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  min-height: 50px;
+  width: 100%;
+  transition: background 0.25s, transform 0.2s;
+}
+
+.btn-cta:hover {
+  background: var(--terra2);
+  transform: translateY(-2px);
+}
+
+.cinfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.cinfo-block {
+  display: flex;
+  gap: 1.1rem;
+  align-items: flex-start;
+  padding: 1.2rem 1.4rem;
+  background: rgba(240, 232, 213, 0.03);
+  border: 1px solid rgba(240, 232, 213, 0.07);
+  border-radius: 12px;
+  transition: border-color 0.3s;
+}
+
+.cinfo-block:hover {
+  border-color: rgba(196, 98, 45, 0.3);
+}
+
+.cinfo-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: rgba(196, 98, 45, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--terra);
+  font-size: 0.95rem;
+}
+
+.cinfo-block h4 {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--saffron);
+  margin-bottom: 0.25rem;
+}
+
+.cinfo-block p,
+.cinfo-block a {
+  font-size: 0.85rem;
+  color: var(--cream2);
+  line-height: 1.6;
+}
+
+.cinfo-block a:hover {
+  color: var(--saffron);
+}
+
+.map-frame {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(240, 232, 213, 0.08);
+}
+
+.map-frame iframe {
+  display: block;
+  width: 100%;
+  height: 230px;
+  border: none;
+}
+
+
+/* ======================================================
+   FOOTER
+====================================================== */
+
+footer {
+  background: rgba(6, 13, 8, 0.95);
+  border-top: 1px solid rgba(196, 98, 45, 0.12);
+  padding: 2.2rem clamp(1.5rem, 7vw, 5.5rem);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1rem;
+}
+
+.foot-brand {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.1rem;
+  color: var(--cream);
+}
+
+.foot-brand small {
+  display: block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.58em;
+  letter-spacing: 0.18em;
+  color: var(--saffron);
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+footer p {
+  font-size: 0.72rem;
+  color: rgba(176, 154, 94, 0.4);
+  text-align: center;
+}
+
+.foot-links {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.2rem;
+}
+
+.foot-links a {
+  font-size: 0.72rem;
+  color: rgba(240, 232, 213, 0.35);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.foot-links a:hover {
+  color: var(--saffron);
+}
+
+
+/* ======================================================
+   FLOATING ACTION BUTTONS
+====================================================== */
+
+.fabs {
+  position: fixed;
+  bottom: 22px;
+  right: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 900;
+}
+
+.fab {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: var(--white);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+  transition: transform 0.25s, box-shadow 0.25s;
+  position: relative;
+}
+
+.fab:hover {
+  transform: scale(1.12) translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.fab-wa { background: #25D366; }
+.fab-ph { background: var(--terra); }
+
+.fab-label {
+  position: absolute;
+  right: 58px;
+  background: rgba(10, 22, 13, 0.95);
+  color: var(--cream);
+  font-size: 0.68rem;
+  padding: 5px 10px;
+  border-radius: 40px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(4px);
+  transition: all 0.2s;
+  pointer-events: none;
+  border: 1px solid rgba(196, 98, 45, 0.25);
+}
+
+.fab:hover .fab-label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* ======================================================
+   SCROLL REVEAL UTILITY
+====================================================== */
+
+.rv {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+.rv.in {
+  opacity: 1;
+  transform: none;
+}
+
+.rv.d1 { transition-delay: 0.1s; }
+.rv.d2 { transition-delay: 0.2s; }
+.rv.d3 { transition-delay: 0.3s; }
+.rv.d4 { transition-delay: 0.4s; }
+
+
+/* ======================================================
+   RESPONSIVE — TABLET (max 960px)
+====================================================== */
+
+@media (max-width: 960px) {
+  .nav-links { display: none; }
+  .burger    { display: flex; }
+  .mob-menu  { display: flex; }
+
+  .features {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .feat:nth-child(2) {
+    border-right: none;
+  }
+
+  .story {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .story-mosaic { order: -1; }
+
+  .g-view {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 44vw 44vw 44vw;
+  }
+
+  .gc1 { grid-column: 1 / 3; grid-row: 1; }
+  .gc2, .gc3 { grid-column: auto; grid-row: auto; }
+  .gc4, .gc5 { grid-column: auto; grid-row: auto; }
+
+  .contact-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .foot-links {
+    justify-content: center;
+  }
+
+  .hero-stats {
+    gap: 2rem;
+  }
+}
+
+
+/* ======================================================
+   RESPONSIVE — MOBILE (max 620px)
+====================================================== */
+
+@media (max-width: 620px) {
+  .hero-h1 { font-size: 2.6rem; }
+
+  .feat {
+    border-right: none;
+    border-bottom: 1px solid rgba(196, 98, 45, 0.1);
+  }
+
+  .feat:nth-last-child(-n+2) {
+    border-bottom: none;
+  }
+
+  .g-view {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .gc1, .gc2, .gc3, .gc4, .gc5 {
+    grid-column: 1;
+    grid-row: auto;
+    height: 65vw;
+  }
+
+  .hero-stats {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .menu-item {
+    grid-template-columns: auto 1fr;
+    gap: 0.8rem;
+  }
+
+  .item-dots, .item-price {
+    display: none;
+  }
+
+  .cform-row {
+    grid-template-columns: 1fr;
+  }
+
+  .s-img-sm {
+    display: none;
+  }
+
+  .s-img-big {
+    height: 260px;
+  }
+}
+
+</style>
+</head>
+<body>
+
+
+<!-- ================================================================
+     NAVIGATION
+================================================================ -->
+<nav class="nav" id="topnav">
+
+  <div class="nav-logo">
+    <div class="nav-logo-mark">R</div>
+    <div class="nav-logo-text">
+      The Royal Delight
+      <small>Fine Dining - Malda</small>
+    </div>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#story">About</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#gallery" class="nav-cta">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <button class="burger" id="brg" aria-label="Open navigation menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+</nav>
+
+<div class="mob-menu" id="mob">
+  <a href="#hero"    class="ml">Home</a>
+  <a href="#story"   class="ml">About</a>
+  <a href="#menu"    class="ml">Menu</a>
+  <a href="#gallery" class="ml nav-cta">Gallery</a>
+  <a href="#contact" class="ml">Contact</a>
+</div>
+
+
+<!-- ================================================================
+     HERO
+================================================================ -->
+<section class="hero" id="hero">
+
+  <div class="hero-bg"></div>
+
+  <div class="hero-arch" aria-hidden="true">
+    <div class="hero-arch-outer"></div>
+    <div class="hero-arch-inner"></div>
+  </div>
+
+  <div class="hero-corner-tl" aria-hidden="true"></div>
+  <div class="hero-corner-br" aria-hidden="true"></div>
+
+  <div class="hero-content">
+
+    <span class="hero-kicker">Est. Malda, West Bengal</span>
+
+    <h1 class="hero-h1">
+      <span class="outline">Dine</span><br>
+      Like <span class="italic">Royals</span>
+    </h1>
+
+    <div class="hero-divider" aria-hidden="true">
+      <i class="fa-solid fa-diamond"></i>
+    </div>
+
+    <p class="hero-sub">
+      Where ancient Mughal grandeur, Indian warmth, and Chinese mastery
+      converge at one legendary table in Malda.
+    </p>
+
+    <div class="hero-btns">
+      <a href="#menu"    class="btn-terra">
+        <i class="fa-solid fa-utensils"></i> Explore Menu
+      </a>
+      <a href="#contact" class="btn-ghost">
+        <i class="fa-solid fa-calendar-check"></i> Reserve Now
+      </a>
+    </div>
+
+  </div>
+
+  <div class="hero-stats">
+    <div class="h-stat">
+      <span class="num">3+</span>
+      <span class="lbl">Cuisines</span>
+    </div>
+    <div class="h-stat">
+      <span class="num">50+</span>
+      <span class="lbl">Dishes</span>
+    </div>
+    <div class="h-stat">
+      <span class="num">4.8</span>
+      <span class="lbl">Rating</span>
+    </div>
+    <div class="h-stat">
+      <span class="num">5K+</span>
+      <span class="lbl">Happy Guests</span>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ================================================================
+     FEATURES STRIP
+================================================================ -->
+<div class="features rv">
+
+  <div class="feat">
+    <div class="feat-icon"><i class="fa-solid fa-fire-burner"></i></div>
+    <h3>Royal Kitchen</h3>
+    <p>Heritage recipes, modern mastery.</p>
+  </div>
+
+  <div class="feat">
+    <div class="feat-icon"><i class="fa-solid fa-gem"></i></div>
+    <h3>Baroque Decor</h3>
+    <p>Chandeliers, sculptures, grandeur.</p>
+  </div>
+
+  <div class="feat">
+    <div class="feat-icon"><i class="fa-solid fa-glass-water"></i></div>
+    <h3>Premium Service</h3>
+    <p>Every guest, a royal welcome.</p>
+  </div>
+
+  <div class="feat">
+    <div class="feat-icon"><i class="fa-solid fa-location-dot"></i></div>
+    <h3>Heart of Malda</h3>
+    <p>On National Highway, Rathbari.</p>
+  </div>
+
+</div>
+
+
+<!-- ================================================================
+     STORY / ABOUT
+================================================================ -->
+<section class="story" id="story">
+
+  <div class="story-txt rv">
+    <p class="eyebrow">Our Story</p>
+    <h2>Born of Passion,<br>Steeped in <em>Heritage</em></h2>
+    <p>
+      Nestled along the National Highway in Malda, The Royal Delight was
+      founded with a single vision: to bring the lavishness of Mughal courts
+      and the soul of Indian home cooking into one unforgettable space.
+    </p>
+    <blockquote class="story-pull">
+      "A meal here is not just dinner -- it is theatre, history, and love on a plate."
+    </blockquote>
+    <p>
+      From baroque chandeliers to hand-curated busts and vinyl records, every
+      corner is a chapter in an ongoing story of artistry, culture, and
+      uncompromising hospitality.
+    </p>
+    <a href="#contact" class="btn-terra" style="margin-top: 1.6rem; display: inline-flex;">
+      <i class="fa-solid fa-envelope"></i> Get in Touch
+    </a>
+  </div>
+
+  <div class="story-mosaic rv d2">
+    <div class="s-img s-img-big">
+      <img
+        src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=900&q=80"
+        alt="Grand dining room interior"
+        loading="lazy"
+      />
+    </div>
+    <div class="s-img s-img-sm">
+      <img
+        src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80"
+        alt="Intimate dining area"
+        loading="lazy"
+      />
+    </div>
+    <div class="s-img s-img-sm">
+      <img
+        src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=600&q=80"
+        alt="Heritage decor corner"
+        loading="lazy"
+      />
+    </div>
+    <div class="s-badge">The<br>Royal<br>Delight</div>
+  </div>
+
+</section>
+
+
+<!-- ================================================================
+     GALLERY
+================================================================ -->
+<section class="gallery-s" id="gallery">
+
+  <div class="gallery-hd rv">
+    <div>
+      <p class="g-eyebrow">Interiors</p>
+      <h2 class="g-title">The <em>Space</em></h2>
+    </div>
+    <p class="g-sub">A space that transforms every visit into a memory.</p>
+  </div>
+
+  <div class="g-view rv d1">
+
+    <div class="g-cell gc1">
+      <img
+        src="https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?w=900&q=80"
+        alt="Ornate gold ceiling with chandeliers"
+        loading="lazy"
+      />
+      <div class="g-cap"><span>The Celestial Ceiling</span></div>
+    </div>
+
+    <div class="g-cell gc2">
+      <img
+        src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=700&q=80"
+        alt="Grand dining hall"
+        loading="lazy"
+      />
+      <div class="g-cap"><span>Grand Hall</span></div>
+    </div>
+
+    <div class="g-cell gc3">
+      <img
+        src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=700&q=80"
+        alt="Heritage decor corner"
+        loading="lazy"
+      />
+      <div class="g-cap"><span>Heritage Corner</span></div>
+    </div>
+
+    <div class="g-cell gc4">
+      <img
+        src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80"
+        alt="Full dining room view"
+        loading="lazy"
+      />
+      <div class="g-cap"><span>The Floor</span></div>
+    </div>
+
+    <div class="g-cell gc5">
+      <img
+        src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=800&q=80"
+        alt="Royal arched corridor"
+        loading="lazy"
+      />
+      <div class="g-cap"><span>Royal Corridor</span></div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================================================================
+     MENU
+================================================================ -->
+<section class="menu-s" id="menu">
+
+  <div class="menu-hd rv">
+
+    <div>
+      <p class="menu-eyebrow">Culinary Mastery</p>
+      <h2 class="menu-title">The <em>Menu</em></h2>
+    </div>
+
+    <div class="m-tabs rv d1">
+      <button class="m-tab on" data-cat="indian">Indian</button>
+      <button class="m-tab"    data-cat="mughlai">Mughlai</button>
+      <button class="m-tab"    data-cat="chinese">Chinese</button>
+      <button class="m-tab"    data-cat="salad">Salad &amp; Papad</button>
+    </div>
+
+  </div>
+
+
+  <!-- Indian Main Course -->
+  <div class="m-panel on rv d2" id="mc-indian">
+    <div class="menu-list">
+
+      <div class="menu-item">
+        <div class="item-num">01</div>
+        <div class="item-body">
+          <h3>Butter Chicken</h3>
+          <p>Tender chicken slow-cooked in a velvety tomato-butter gravy with aromatic whole spices.</p>
+        </div>
+        <div class="item-dots"></div>
+        <div class="item-price">Rs. 320</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-num">02</div>
+        <div class="item-body">
+          <h3>Paneer Lababdar</h3>
+          <p>Rich, creamy tomato-onion gravy cradling soft cottage-cheese cubes -- pure indulgence.</p>
+        </div>
+        <div class="item-dots"></div>
+        <div class="item-price">Rs. 280</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-num">03</div>
+        <div class="item-body">
+          <h3>Garlic Naan</h3>
+          <p>Pillowy tandoor-baked flatbread brushed with garlic butter and fresh coriander.</p>
+        </div>
+        <div class="item-dots"></div>
+        <div class="item-price">Rs. 60</div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Mughlai Dishes -->
+  <div class="m-panel rv d2" id="mc-mughlai">
+    <div class="menu-list">
+
+      <div class="menu-item">
+        <div class="item-num">01</div>
+        <div class="item-body">
+          <h3>Royal Mutton Biryani</h3>
+          <p>Aged Basmati layered with slow-braised mutton, saffron, and Mughal-era whole spices.</p>
+        </div>
+        <div class="item-dots"></div>
+        <div class="item-price">Rs. 480</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-num">02</div>
+        <div class="item-body">
+          <h3>Nargisi Kofta</h3>
+          <p>Hard-boiled eggs encased in spiced lamb mince, simmered in opulent Mughlai gravy.</p>
+        </div>
+        <div class="item-dots"></div>
+        <div class="item-price">Rs. 380</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-num">03</div>
+        <div class="item-body">
+          <h3>Shahi Tukda</h3>
+          <p>Double-fried bread soaked in saffron syrup, crowned with cream and pistachios.</p>
+        </div>
+        <div class="item-dots"></div>
+        <div class="item-price">Rs. 160</div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Chinese Main Course -->
+  <div class="m-panel rv d2" id="mc-chinese">
+    <div class="menu-list">
+
+      <div class="menu-item">
+        <div class="item-num">01</div>
+        <div class="item-body">
+          <h3>Hakka Noodles</h3>
+          <p>Wok-tossed noodles with crisp vegetables in a smoky soy-ginger sauce.</p>
+        </div>
+        <div class="item-dots"></div>
+        <div class="item-price">Rs. 220</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-num">02</div>
+        <div class="item-body">
+          <h3>Szechuan Chilli Chicken</h3>
+          <p>Crispy golden chicken tossed in fiery Szechuan peppercorn and dried-chilli sauce.</p>
+        </div>
+        <div class="item-dots"></div>
+        <div class="item-price">Rs. 310</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-num">03</div>
+        <div class="item-body">
+          <h3>Veg Manchurian</h3>
+          <p>Soft vegetable dumplings in a tangy, umami-rich Manchurian sauce.</p>
+        </div>
+        <div class="item-dots"></div>
+        <div class="item-price">Rs. 200</div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Salad and Papad -->
+  <div class="m-panel rv d2" id="mc-salad">
+    <div class="menu-list">
+
+      <div class="menu-item">
+        <div class="item-num">01</div>
+        <div class="item-body">
+          <h3>Crisp Green Garden Salad</h3>
+          <p>Seasonal greens, cherry tomatoes, and cucumbers in a light lemon-herb dressing.</p>
+        </div>
+        <div class="item-dots"></div>
+        <div class="item-price">Rs. 120</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-num">02</div>
+        <div class="item-body">
+          <h3>Roasted Masala Papad</h3>
+          <p>Flame-roasted lentil wafer topped with spiced onion, tomato, and coriander.</p>
+        </div>
+        <div class="item-dots"></div>
+        <div class="item-price">Rs. 60</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-num">03</div>
+        <div class="item-body">
+          <h3>Boondi Raita</h3>
+          <p>Cool, whipped yoghurt with crispy boondi, roasted cumin, and fresh mint.</p>
+        </div>
+        <div class="item-dots"></div>
+        <div class="item-price">Rs. 80</div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ================================================================
+     CONTACT
+================================================================ -->
+<section class="contact-s" id="contact">
+
+  <div class="contact-deco-outer" aria-hidden="true"></div>
+  <div class="contact-deco-inner" aria-hidden="true"></div>
+
+  <div class="contact-wrap">
+
+    <div class="rv">
+      <span class="contact-eyebrow">Reservations</span>
+      <h2 class="contact-title">Secure Your <em>Royal</em> Table</h2>
+
+      <form class="cform" id="cform" novalidate>
+        <div class="cform-row">
+          <input type="text"  placeholder="Your Name"     required />
+          <input type="email" placeholder="Email Address" required />
+        </div>
+        <input type="tel" placeholder="Phone Number" />
+        <textarea placeholder="Special requests or message..." required></textarea>
+        <button type="submit" class="btn-cta">Send Message</button>
+      </form>
+    </div>
+
+    <div class="cinfo rv d2">
+
+      <div class="cinfo-block">
+        <div class="cinfo-icon"><i class="fa-solid fa-location-dot"></i></div>
+        <div>
+          <h4>Address</h4>
+          <p>
+            12, Maheshwari Building, National Highway<br>
+            Sarva Mangala Pally, Rathbari<br>
+            Malda, West Bengal - 732101
+          </p>
+        </div>
+      </div>
+
+      <div class="cinfo-block">
+        <div class="cinfo-icon"><i class="fa-solid fa-phone"></i></div>
+        <div>
+          <h4>Phone</h4>
+          <a href="tel:+917585877902">+91 75858 77902</a>
+        </div>
+      </div>
+
+      <div class="cinfo-block">
+        <div class="cinfo-icon"><i class="fa-brands fa-whatsapp"></i></div>
+        <div>
+          <h4>WhatsApp</h4>
+          <a href="https://wa.me/917585877902" target="_blank" rel="noopener">
+            Chat with us on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="map-frame">
+        <iframe
+          src="https://maps.google.com/maps?q=12+Maheshwari+Building+National+Highway+Sarva+Mangala+Pally+Rathbari+Malda+West+Bengal+732101&output=embed"
+          width="100%"
+          height="230"
+          style="border: 0;"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="The Royal Delight Location Map">
+        </iframe>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================================================================
+     FOOTER
+================================================================ -->
+<footer>
+
+  <div class="foot-brand">
+    The Royal Delight
+    <small>Fine Dining - Malda</small>
+  </div>
+
+  <p>
+    12, Maheshwari Building, National Highway, Malda, West Bengal 732101
+    &mdash; &copy; 2025 The Royal Delight
+  </p>
+
+  <div class="foot-links">
+    <a href="#hero">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+</footer>
+
+
+<!-- ================================================================
+     FLOATING ACTION BUTTONS
+================================================================ -->
+<div class="fabs">
+
+  <a href="https://wa.me/917585877902"
+     class="fab fab-wa"
+     target="_blank"
+     rel="noopener"
+     aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="fab-label">WhatsApp Us</span>
+  </a>
+
+  <a href="tel:+917585877902"
+     class="fab fab-ph"
+     aria-label="Call Us">
+    <i class="fa-solid fa-phone"></i>
+    <span class="fab-label">Call Us</span>
+  </a>
+
+</div>
+
+
+<!-- ================================================================
+     JAVASCRIPT
+================================================================ -->
+<script>
+
+  /* ---- Navbar fills on scroll ---- */
+  var topnav = document.getElementById('topnav');
+
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 50) {
+      topnav.classList.add('filled');
+    } else {
+      topnav.classList.remove('filled');
+    }
+  }, { passive: true });
+
+
+  /* ---- Hamburger / mobile menu ---- */
+  var burgerBtn  = document.getElementById('brg');
+  var mobileMenu = document.getElementById('mob');
+
+  burgerBtn.addEventListener('click', function () {
+    burgerBtn.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    if (mobileMenu.classList.contains('open')) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  });
+
+  document.querySelectorAll('.ml').forEach(function (link) {
+    link.addEventListener('click', function () {
+      burgerBtn.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+
+
+  /* ---- Menu category tabs ---- */
+  document.querySelectorAll('.m-tab').forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      document.querySelectorAll('.m-tab').forEach(function (t) {
+        t.classList.remove('on');
+      });
+      document.querySelectorAll('.m-panel').forEach(function (panel) {
+        panel.classList.remove('on');
+      });
+      tab.classList.add('on');
+      var targetId = 'mc-' + tab.dataset.cat;
+      document.getElementById(targetId).classList.add('on');
+    });
+  });
+
+
+  /* ---- Scroll reveal ---- */
+  var revealItems = document.querySelectorAll('.rv');
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry, index) {
+      if (entry.isIntersecting) {
+        setTimeout(function () {
+          entry.target.classList.add('in');
+        }, index * 70);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -30px 0px'
+  });
+
+  revealItems.forEach(function (el) {
+    observer.observe(el);
+  });
+
+
+  /* ---- Contact form submission ---- */
+  var contactForm = document.getElementById('cform');
+
+  contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var submitBtn = this.querySelector('.btn-cta');
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+    setTimeout(function () {
+      submitBtn.textContent = 'Message Sent!';
+      submitBtn.style.background = '#2e7d4a';
+      setTimeout(function () {
+        submitBtn.textContent = 'Send Message';
+        submitBtn.style.background = '';
+        submitBtn.disabled = false;
+        contactForm.reset();
+      }, 3000);
+    }, 1200);
+  });
+
+</script>
+
+</body>
+</html>
