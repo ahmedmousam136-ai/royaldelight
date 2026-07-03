@@ -1,9 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Test</title>
-</head>
-<body>
-    Hello
-</body>
-</html>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>The Royal Delight – Dusk Palace</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --forest:#0F2318;
+  --forest2:#163524;
+  --forest3:#1E4530;
+  --terra:#C4622D;
+  --terra2:#D97040;
+  --saffron:#DFA020;
+  --saffron2:#F0B830;
+  --cream:#F0E8D5;
+  --cream2:#D8CBAF;
+  --white:#FAFAF5;
+  --muted:rgba(240,232,213,.55);
+  --pad:clamp(3.5rem,8vw,6.5rem);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Space Grotesk',sans-serif;background:var(--forest);color:var(--cream2);overflow-x:hidden;line-height:1.75}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--forest)}
+::-webkit-scrollbar-thumb{background:var(--terra);border-radius:3px}
+
+/* ━━ NAV ━━ */
+.nav{
+  position:fixed;top:0;left:0;width:100%;z-index:1000;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 clamp(1.2rem,5vw,3.5rem);height:66px;
+  transition:background .35s,border-color .35s;
+}
+.nav.filled{background:rgba(10,27,14,.94);backdrop-filter:blur(18px);border-bottom:1px solid rgba(196,98,45,.18)}
+.nav-logo{
+  display:flex;align-items:center;gap:.9rem;
+}
+.nav-logo-mark{
+  width:38px;height:38px;border-radius:50%;
+  border:1.5px solid var(--terra);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'DM Serif Display',serif;font-size:1.1rem;
+  color:var(--terra);flex-shrink:0;
+}
+.nav-logo-text{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(.95rem,2vw,1.15rem);color:var(--cream);
+  line-height:1.2;
+}
