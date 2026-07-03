@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Royal Delight - Premium Restaurant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -18,10 +21,11 @@
             --cream: #F5F1E8;
             --white: #FFFFFF;
             --light-gray: #2a2a2a;
+            --light-cream: #FFFBF7;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Montserrat', sans-serif;
             background-color: var(--deep-black);
             color: var(--cream);
             overflow-x: hidden;
@@ -30,6 +34,11 @@
 
         html {
             scroll-behavior: smooth;
+            background-color: var(--deep-black);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
         }
 
         /* Navigation */
@@ -37,39 +46,41 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1.5rem 2rem;
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(15px);
+            padding: 1.2rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.1);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
             color: var(--primary-gold);
             letter-spacing: 2px;
             text-transform: uppercase;
-            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             list-style: none;
         }
 
         .nav-links a {
             color: var(--cream);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 400;
             position: relative;
             transition: all 0.3s ease;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
         }
 
         .nav-links a:hover {
@@ -79,10 +90,10 @@
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: -8px;
             left: 0;
             width: 0;
-            height: 2px;
+            height: 1px;
             background: var(--primary-gold);
             transition: width 0.3s ease;
         }
@@ -99,16 +110,16 @@
 
         .hamburger span {
             width: 25px;
-            height: 3px;
+            height: 2px;
             background: var(--primary-gold);
-            margin: 5px 0;
+            margin: 6px 0;
             transition: all 0.3s ease;
         }
 
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(135deg, rgba(10, 10, 10, 0.4), rgba(128, 0, 32, 0.2)), 
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.35), rgba(128, 0, 32, 0.15)), 
                         url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-06-27%20at%2019.18.08%20%283%29-H5Hfbbw0KrHW3LGXRmNDEzxd4wBe3V.jpeg');
             background-size: cover;
             background-position: center;
@@ -129,7 +140,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+            background: radial-gradient(circle at center, transparent 10%, rgba(0, 0, 0, 0.75) 100%);
             z-index: 1;
         }
 
@@ -137,12 +148,14 @@
             position: relative;
             z-index: 2;
             animation: heroFade 1.2s ease-out;
+            max-width: 900px;
+            padding: 0 2rem;
         }
 
         @keyframes heroFade {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(40px);
             }
             to {
                 opacity: 1;
@@ -151,19 +164,21 @@
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            color: var(--primary-gold);
-            font-weight: 900;
-            margin-bottom: 1rem;
-            text-shadow: 0 0 30px rgba(212, 175, 55, 0.6), 0 0 60px rgba(212, 175, 55, 0.3);
-            letter-spacing: 3px;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 10vw, 5.5rem);
+            color: var(--white);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+            letter-spacing: 2px;
             animation: slideDown 0.8s ease-out;
+            line-height: 1.1;
         }
 
         @keyframes slideDown {
             from {
                 opacity: 0;
-                transform: translateY(-50px);
+                transform: translateY(-60px);
             }
             to {
                 opacity: 1;
@@ -172,18 +187,19 @@
         }
 
         .hero p {
-            font-size: clamp(1rem, 3vw, 1.5rem);
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
             color: var(--cream);
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             font-weight: 300;
             animation: slideUp 0.8s ease-out 0.2s both;
-            letter-spacing: 1px;
+            letter-spacing: 0.8px;
+            line-height: 1.7;
         }
 
         @keyframes slideUp {
             from {
                 opacity: 0;
-                transform: translateY(50px);
+                transform: translateY(60px);
             }
             to {
                 opacity: 1;
@@ -193,60 +209,61 @@
 
         .hero-buttons {
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
             justify-content: center;
             flex-wrap: wrap;
             animation: slideUp 0.8s ease-out 0.4s both;
         }
 
         .btn {
-            padding: 1rem 2.5rem;
-            font-size: 1rem;
+            padding: 0.95rem 2.8rem;
+            font-size: 0.9rem;
             font-weight: 600;
             border: none;
             cursor: pointer;
-            transition: all 0.3s ease;
-            letter-spacing: 1px;
+            transition: all 0.4s ease;
+            letter-spacing: 1.2px;
             text-transform: uppercase;
             border-radius: 0;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .btn-primary {
             background: linear-gradient(135deg, var(--primary-gold), #E8C547);
             color: var(--deep-black);
-            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.3);
         }
 
         .btn-primary:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.5);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 50px rgba(212, 175, 55, 0.5);
         }
 
         .btn-secondary {
             background: transparent;
-            color: var(--primary-gold);
+            color: var(--white);
             border: 2px solid var(--primary-gold);
         }
 
         .btn-secondary:hover {
             background: var(--primary-gold);
             color: var(--deep-black);
-            transform: translateY(-5px);
+            transform: translateY(-4px);
         }
 
         /* Floating Buttons */
         .floating-btn {
             position: fixed;
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             cursor: pointer;
             z-index: 999;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 8px 35px rgba(0, 0, 0, 0.5);
             transition: all 0.3s ease;
             border: 2px solid var(--primary-gold);
             animation: float 3s ease-in-out infinite;
@@ -257,32 +274,32 @@
                 transform: translateY(0px);
             }
             50% {
-                transform: translateY(-20px);
+                transform: translateY(-25px);
             }
         }
 
         .whatsapp-btn {
             background: linear-gradient(135deg, #25D366, #1ba75a);
             color: white;
-            bottom: 100px;
-            right: 20px;
+            bottom: 120px;
+            right: 25px;
         }
 
         .whatsapp-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 15px 50px rgba(37, 211, 102, 0.4);
+            transform: scale(1.15);
+            box-shadow: 0 12px 50px rgba(37, 211, 102, 0.5);
         }
 
         .call-btn {
             background: linear-gradient(135deg, var(--dark-burgundy), #600015);
-            color: var(--primary-gold);
+            color: var(--white);
             bottom: 30px;
-            right: 20px;
+            right: 25px;
         }
 
         .call-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 15px 50px rgba(128, 0, 32, 0.5);
+            transform: scale(1.15);
+            box-shadow: 0 12px 50px rgba(128, 0, 32, 0.6);
         }
 
         /* Sections */
@@ -293,75 +310,91 @@
         }
 
         .section-title {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 6vw, 3.8rem);
+            color: var(--white);
             text-align: center;
-            margin-bottom: 3rem;
-            font-weight: 800;
+            margin-bottom: 3.5rem;
+            font-weight: 700;
             position: relative;
-            text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            letter-spacing: 1px;
+            line-height: 1.2;
         }
 
         .section-title::after {
             content: '';
             display: block;
-            width: 100px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary-gold), transparent);
-            margin: 1rem auto 0;
+            width: 80px;
+            height: 2px;
+            background: var(--primary-gold);
+            margin: 1.5rem auto 0;
         }
 
         /* About Section */
         .about {
-            background: rgba(212, 175, 55, 0.02);
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            background: var(--deep-black);
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
         }
 
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 3.5rem;
             align-items: center;
         }
 
         .about-text h3 {
-            font-size: 1.8rem;
-            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--white);
             margin-bottom: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
 
         .about-text p {
-            font-size: 1.05rem;
+            font-size: 1rem;
             line-height: 1.8;
-            color: var(--cream);
-            margin-bottom: 1rem;
+            color: rgba(245, 241, 232, 0.85);
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.3px;
         }
 
         .about-features {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin-top: 2rem;
+            gap: 2rem;
+            margin-top: 2.5rem;
         }
 
         .feature {
-            padding: 1.5rem;
-            background: rgba(212, 175, 55, 0.1);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 10px;
+            padding: 2rem;
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 0;
             transition: all 0.3s ease;
         }
 
         .feature:hover {
-            background: rgba(212, 175, 55, 0.15);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.2);
+            background: rgba(212, 175, 55, 0.1);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(212, 175, 55, 0.15);
+            border-color: var(--primary-gold);
         }
 
         .feature h4 {
+            font-family: 'Playfair Display', serif;
             color: var(--primary-gold);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .feature p {
+            color: rgba(245, 241, 232, 0.8);
+            font-size: 0.9rem;
+            line-height: 1.7;
         }
 
         /* Services Section */
@@ -371,15 +404,15 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
         }
 
         .service-card {
-            background: rgba(212, 175, 55, 0.05);
-            padding: 2rem;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            transition: all 0.3s ease;
+            background: rgba(212, 175, 55, 0.03);
+            padding: 2.5rem;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
         }
@@ -387,49 +420,53 @@
         .service-card::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.2), transparent);
-            transition: all 0.3s ease;
+            top: -100%;
+            right: -100%;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.15), transparent);
+            transition: all 0.4s ease;
         }
 
         .service-card:hover::before {
-            top: -20%;
-            right: -20%;
+            top: -30%;
+            right: -30%;
         }
 
         .service-card:hover {
-            background: rgba(212, 175, 55, 0.1);
-            transform: translateY(-10px);
+            background: rgba(212, 175, 55, 0.08);
+            transform: translateY(-12px);
             border-color: var(--primary-gold);
-            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 15px 50px rgba(212, 175, 55, 0.15);
         }
 
         .service-card h3 {
-            color: var(--primary-gold);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--white);
+            margin-bottom: 1.2rem;
+            font-size: 1.6rem;
             position: relative;
             z-index: 1;
+            font-weight: 700;
         }
 
         .service-card p {
-            color: var(--cream);
+            color: rgba(245, 241, 232, 0.85);
             position: relative;
             z-index: 1;
+            font-size: 0.95rem;
+            line-height: 1.7;
         }
 
         /* Gallery Section */
         .gallery {
-            background: rgba(212, 175, 55, 0.02);
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            background: var(--deep-black);
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
         }
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
         }
 
@@ -445,7 +482,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: all 0.4s ease;
+            transition: all 0.5s ease;
         }
 
         .gallery-overlay {
@@ -454,28 +491,28 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(212, 175, 55, 0.1);
+            background: rgba(212, 175, 55, 0.08);
             backdrop-filter: blur(0px);
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             opacity: 0;
         }
 
         .gallery-item:hover img {
-            transform: scale(1.1) rotate(2deg);
+            transform: scale(1.08) rotate(1deg);
         }
 
         .gallery-item:hover .gallery-overlay {
             opacity: 1;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(6px);
         }
 
         .zoom-icon {
             color: var(--primary-gold);
-            font-size: 2rem;
-            text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+            font-size: 2.5rem;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.7);
         }
 
         /* Modal */
@@ -487,7 +524,7 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.95);
+            background-color: rgba(0, 0, 0, 0.97);
             animation: fadeIn 0.3s ease;
         }
 
@@ -514,10 +551,10 @@
 
         .close {
             position: absolute;
-            right: 30px;
-            top: 20px;
+            right: 35px;
+            top: 25px;
             color: var(--primary-gold);
-            font-size: 40px;
+            font-size: 45px;
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -525,7 +562,8 @@
         }
 
         .close:hover {
-            transform: scale(1.2);
+            transform: scale(1.25);
+            color: var(--white);
         }
 
         /* Why Choose Us */
@@ -535,72 +573,86 @@
 
         .why-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
         }
 
         .why-item {
             text-align: center;
-            padding: 2rem;
-            transition: all 0.3s ease;
+            padding: 2.5rem 2rem;
+            transition: all 0.4s ease;
         }
 
         .why-item:hover {
-            transform: translateY(-10px);
+            transform: translateY(-12px);
         }
 
         .why-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-gold);
         }
 
         .why-item h3 {
-            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+            color: var(--white);
             margin-bottom: 1rem;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .why-item p {
+            color: rgba(245, 241, 232, 0.8);
+            font-size: 0.95rem;
+            line-height: 1.7;
         }
 
         /* Testimonials */
         .testimonials {
             background: rgba(212, 175, 55, 0.02);
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
         }
 
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
         }
 
         .testimonial-card {
             background: rgba(212, 175, 55, 0.05);
-            padding: 2rem;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 10px;
+            padding: 2.5rem;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 0;
             transition: all 0.3s ease;
         }
 
         .testimonial-card:hover {
             background: rgba(212, 175, 55, 0.1);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.2);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(212, 175, 55, 0.15);
+            border-color: var(--primary-gold);
         }
 
         .stars {
             color: var(--primary-gold);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
         }
 
         .testimonial-text {
-            color: var(--cream);
-            margin-bottom: 1rem;
+            color: rgba(245, 241, 232, 0.85);
+            margin-bottom: 1.5rem;
             font-style: italic;
+            font-size: 0.95rem;
+            line-height: 1.8;
         }
 
         .testimonial-author {
             color: var(--primary-gold);
             font-weight: 600;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
         }
 
         /* Contact Section */
@@ -611,107 +663,119 @@
         .contact-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 3.5rem;
             align-items: start;
         }
 
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .contact-item {
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
             align-items: flex-start;
         }
 
         .contact-icon {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: var(--primary-gold);
-            min-width: 30px;
+            min-width: 35px;
         }
 
         .contact-details h3 {
-            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+            color: var(--white);
             margin-bottom: 0.5rem;
+            font-weight: 700;
+            font-size: 1.1rem;
         }
 
         .contact-details p {
-            color: var(--cream);
+            color: rgba(245, 241, 232, 0.8);
+            font-size: 0.95rem;
         }
 
         .contact-form {
-            background: rgba(212, 175, 55, 0.08);
-            backdrop-filter: blur(20px);
-            padding: 2.5rem;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 15px;
+            background: rgba(212, 175, 55, 0.06);
+            backdrop-filter: blur(25px);
+            padding: 2.8rem;
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            border-radius: 0;
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.8rem;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
-            color: var(--primary-gold);
+            margin-bottom: 0.6rem;
+            color: var(--white);
             font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 1rem;
-            background: rgba(245, 241, 232, 0.1);
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 1.1rem;
+            background: rgba(245, 241, 232, 0.08);
+            border: 1px solid rgba(212, 175, 55, 0.2);
             color: var(--cream);
-            border-radius: 5px;
+            border-radius: 0;
             transition: all 0.3s ease;
-            font-family: inherit;
-            font-size: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(245, 241, 232, 0.4);
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: var(--primary-gold);
-            background: rgba(245, 241, 232, 0.15);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+            background: rgba(245, 241, 232, 0.12);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
         }
 
         .form-group textarea {
             resize: vertical;
-            min-height: 120px;
+            min-height: 130px;
         }
 
         .submit-btn {
             width: 100%;
-            padding: 1rem;
+            padding: 1.1rem;
             background: linear-gradient(135deg, var(--primary-gold), #E8C547);
             color: var(--deep-black);
             border: none;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.9rem;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
-            border-radius: 5px;
+            border-radius: 0;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(212, 175, 55, 0.4);
         }
 
         /* Map Section */
         .map-section {
-            background: rgba(212, 175, 55, 0.02);
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 3rem 2rem;
+            background: var(--deep-black);
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
+            padding: 4rem 2rem;
         }
 
         .map-container {
@@ -722,11 +786,11 @@
         .map-wrapper {
             position: relative;
             width: 100%;
-            height: 500px;
-            border: 2px solid rgba(212, 175, 55, 0.3);
-            border-radius: 15px;
+            height: 550px;
+            border: 2px solid rgba(212, 175, 55, 0.25);
+            border-radius: 0;
             overflow: hidden;
-            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.15);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
         }
 
         .map-wrapper iframe {
@@ -737,9 +801,9 @@
 
         /* Footer */
         footer {
-            background: rgba(0, 0, 0, 0.95);
-            padding: 3rem 2rem 1.5rem;
-            border-top: 2px solid rgba(212, 175, 55, 0.3);
+            background: rgba(0, 0, 0, 0.98);
+            padding: 3.5rem 2rem 1.5rem;
+            border-top: 2px solid rgba(212, 175, 55, 0.2);
             text-align: center;
         }
 
@@ -750,16 +814,17 @@
 
         .footer-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             justify-content: center;
             margin-bottom: 2rem;
             flex-wrap: wrap;
         }
 
         .footer-links a {
-            color: var(--cream);
+            color: rgba(245, 241, 232, 0.8);
             text-decoration: none;
             transition: all 0.3s ease;
+            font-size: 0.9rem;
         }
 
         .footer-links a:hover {
@@ -767,16 +832,16 @@
         }
 
         .footer-bottom {
-            color: var(--cream);
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-            padding-top: 1.5rem;
-            font-size: 0.9rem;
+            color: rgba(245, 241, 232, 0.6);
+            font-size: 0.85rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
         }
 
-        /* Responsive Design */
+        /* Mobile Responsive */
         @media (max-width: 768px) {
             nav {
-                padding: 1rem;
+                padding: 1rem 1.5rem;
             }
 
             .logo {
@@ -784,12 +849,24 @@
             }
 
             .nav-links {
+                gap: 1.5rem;
+            }
+
+            .nav-links a {
+                font-size: 0.8rem;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
                 display: none;
+                flex-direction: column;
                 position: absolute;
                 top: 60px;
                 left: 0;
                 right: 0;
-                flex-direction: column;
                 background: rgba(10, 10, 10, 0.98);
                 padding: 2rem;
                 gap: 1rem;
@@ -799,67 +876,129 @@
                 display: flex;
             }
 
-            .hamburger {
-                display: flex;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
-
             .hero {
-                margin-top: 60px;
+                margin-top: 50px;
             }
 
-            section {
-                padding: 3rem 1.5rem;
+            .hero h1 {
+                font-size: clamp(2rem, 7vw, 3.5rem);
             }
 
             .hero-buttons {
-                flex-direction: column;
+                gap: 1rem;
             }
 
             .btn {
-                width: 100%;
+                padding: 0.8rem 2rem;
+                font-size: 0.85rem;
             }
 
-            .whatsapp-btn,
+            section {
+                padding: 3.5rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: clamp(1.8rem, 5vw, 2.8rem);
+                margin-bottom: 2.5rem;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid,
+            .testimonials-grid,
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .floating-btn {
+                width: 55px;
+                height: 55px;
+                font-size: 1.3rem;
+            }
+
+            .whatsapp-btn {
+                bottom: 90px;
+                right: 15px;
+            }
+
             .call-btn {
-                width: 50px;
-                height: 50px;
-                font-size: 1.2rem;
+                bottom: 20px;
+                right: 15px;
             }
 
             .map-wrapper {
                 height: 400px;
             }
 
-            .floating-btn {
-                width: 50px;
-                height: 50px;
-                font-size: 1.2rem;
+            .contact-form {
+                padding: 2rem;
+            }
+
+            .footer-links {
+                gap: 1.5rem;
             }
         }
 
         @media (max-width: 480px) {
+            nav {
+                padding: 0.8rem 1rem;
+            }
+
+            .logo {
+                font-size: 1.1rem;
+                letter-spacing: 1px;
+            }
+
+            .hero {
+                margin-top: 45px;
+                height: 100vh;
+            }
+
             .hero h1 {
-                font-size: 2rem;
+                font-size: clamp(1.8rem, 6vw, 2.8rem);
+                margin-bottom: 1rem;
             }
 
             .hero p {
-                font-size: 0.95rem;
+                font-size: 0.9rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-buttons {
+                gap: 0.8rem;
+                flex-direction: column;
+            }
+
+            .btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.8rem;
+            }
+
+            section {
+                padding: 2.5rem 1rem;
             }
 
             .section-title {
-                font-size: 1.8rem;
+                font-size: clamp(1.5rem, 4vw, 2.2rem);
+                margin-bottom: 2rem;
             }
 
-            .about-features {
-                grid-template-columns: 1fr;
+            .service-card,
+            .feature,
+            .testimonial-card {
+                padding: 1.8rem;
             }
 
             .gallery-grid {
@@ -867,21 +1006,41 @@
                 gap: 1.5rem;
             }
 
+            .contact-item {
+                gap: 1rem;
+            }
+
+            .contact-icon {
+                font-size: 1.5rem;
+            }
+
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+
+            .whatsapp-btn {
+                bottom: 75px;
+                right: 10px;
+            }
+
+            .call-btn {
+                bottom: 15px;
+                right: 10px;
+            }
+
             .map-wrapper {
                 height: 300px;
             }
 
-            .whatsapp-btn {
-                bottom: 80px;
+            footer {
+                padding: 2.5rem 1rem 1rem;
             }
 
-            nav {
-                padding: 0.8rem;
-            }
-
-            .logo {
-                font-size: 1.1rem;
-                letter-spacing: 1px;
+            .footer-links {
+                gap: 1rem;
+                font-size: 0.8rem;
             }
         }
     </style>
@@ -890,14 +1049,14 @@
     <!-- Navigation -->
     <nav>
         <div class="logo">Royal Delight</div>
-        <ul class="nav-links" id="navLinks">
+        <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="hamburger" id="hamburger">
+        <div class="hamburger">
             <span></span>
             <span></span>
             <span></span>
@@ -907,109 +1066,109 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>ROYAL DELIGHT</h1>
-            <p>Experience Luxury Dining at Its Finest</p>
+            <h1>Royal Delight</h1>
+            <p>Experience Timeless Elegance & Culinary Excellence</p>
             <div class="hero-buttons">
                 <button class="btn btn-primary">Reserve Now</button>
-                <button class="btn btn-secondary">Learn More</button>
+                <button class="btn btn-secondary">Explore More</button>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section class="about" id="about">
-        <h2 class="section-title">About Us</h2>
+        <div class="section-title">About Us</div>
         <div class="about-content">
             <div class="about-text">
-                <h3>Welcome to Royal Delight</h3>
-                <p>Step into a world of unparalleled elegance and sophistication. Royal Delight is more than just a restaurant—it's a sanctuary of luxury where every detail has been meticulously crafted to provide an extraordinary dining experience.</p>
-                <p>With our premium ambiance, world-class service, and exquisite cuisine, we've established ourselves as the ultimate destination for those who appreciate the finer things in life.</p>
+                <h3>Premium Restaurant & Lounge</h3>
+                <p>Royal Delight stands as an epitome of luxury dining, where tradition meets contemporary sophistication. Our establishment celebrates the finest in hospitality, offering guests an unforgettable culinary journey.</p>
+                <p>With meticulous attention to detail and an unwavering commitment to excellence, we create moments that transcend ordinary dining experiences.</p>
                 <div class="about-features">
                     <div class="feature">
-                        <h4>🏆 Premium Quality</h4>
-                        <p>Only the finest ingredients and exceptional craftsmanship</p>
+                        <h4>World-Class Cuisine</h4>
+                        <p>Exquisitely crafted dishes from master chefs</p>
                     </div>
                     <div class="feature">
-                        <h4>✨ Elegant Ambiance</h4>
-                        <p>Luxurious decor and sophisticated atmosphere</p>
+                        <h4>Elegant Ambiance</h4>
+                        <p>Sophisticated interiors with premium aesthetics</p>
                     </div>
                     <div class="feature">
-                        <h4>👨‍💼 Expert Staff</h4>
-                        <p>Highly trained professionals dedicated to excellence</p>
+                        <h4>Impeccable Service</h4>
+                        <p>Professional team dedicated to your comfort</p>
                     </div>
                     <div class="feature">
-                        <h4>🌟 Exceptional Service</h4>
-                        <p>Attentive care with a personal touch</p>
+                        <h4>Premium Experience</h4>
+                        <p>Every detail crafted for your satisfaction</p>
                     </div>
                 </div>
             </div>
-            <div style="text-align: center; color: var(--primary-gold); font-size: 5rem;">✦</div>
+            <div style="background: rgba(212, 175, 55, 0.1); height: 400px; border: 1px solid rgba(212, 175, 55, 0.2);"></div>
         </div>
     </section>
 
     <!-- Services Section -->
     <section class="services" id="services">
-        <h2 class="section-title">Our Specialities</h2>
+        <div class="section-title">Our Specialities</div>
         <div class="services-grid">
             <div class="service-card">
-                <h3>Fine Dining Experience</h3>
-                <p>Indulge in a meticulously curated menu featuring culinary masterpieces prepared by our expert chefs. Each dish is a work of art, combining traditional techniques with modern innovation.</p>
-            </div>
-            <div class="service-card">
-                <h3>Premium Beverages</h3>
-                <p>Explore our exclusive collection of wines, spirits, and signature cocktails. Our sommelier will guide you to the perfect pairing for your meal.</p>
+                <h3>Fine Dining</h3>
+                <p>Experience gourmet cuisine prepared by our award-winning chefs, featuring seasonal menus and international delicacies.</p>
             </div>
             <div class="service-card">
                 <h3>Private Events</h3>
-                <p>Host your special occasions in our elegant private spaces. From intimate gatherings to grand celebrations, we ensure every moment is unforgettable.</p>
+                <p>Host your special occasions in our luxurious event spaces, complete with personalized service and bespoke catering.</p>
+            </div>
+            <div class="service-card">
+                <h3>Wine Selection</h3>
+                <p>Discover our curated collection of premium wines from around the world, expertly paired with our culinary offerings.</p>
+            </div>
+            <div class="service-card">
+                <h3>Lounge Bar</h3>
+                <p>Unwind in our sophisticated bar lounge, offering craft cocktails, premium spirits, and an elegant atmosphere.</p>
             </div>
             <div class="service-card">
                 <h3>Catering Services</h3>
-                <p>Bring Royal Delight's luxury to your venue. Our professional catering team ensures impeccable service and exceptional food for any occasion.</p>
+                <p>Bring Royal Delight to your venue with our professional catering and culinary expertise for any occasion.</p>
             </div>
             <div class="service-card">
-                <h3>Personalized Service</h3>
-                <p>Our dedicated staff attends to every detail, ensuring a seamless and memorable dining experience tailored to your preferences.</p>
-            </div>
-            <div class="service-card">
-                <h3>Ambiance & Decor</h3>
-                <p>Immerse yourself in our stunning interiors featuring royal decor, fine art, and sophisticated lighting that creates an atmosphere of pure elegance.</p>
+                <h3>Exclusive Membership</h3>
+                <p>Join our elite members club and enjoy exclusive benefits, special events, and personalized dining experiences.</p>
             </div>
         </div>
     </section>
 
     <!-- Gallery Section -->
     <section class="gallery" id="gallery">
-        <h2 class="section-title">Our Showcase</h2>
+        <div class="section-title">Gallery</div>
         <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-06-27%20at%2019.18.06%20%284%29-ioMIGLaCMM6ADSyxAOfIvqUKy38GU0.jpeg" alt="Elegant Ceiling Design">
+            <div class="gallery-item" onclick="openModal(this)">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-06-27%20at%2019.18.06%20%284%29-ioMIGLaCMM6ADSyxAOfIvqUKy38GU0.jpeg" alt="Gallery Image 1">
                 <div class="gallery-overlay">
-                    <div class="zoom-icon">🔍</div>
+                    <span class="zoom-icon">🔍</span>
                 </div>
             </div>
-            <div class="gallery-item">
-                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-06-27%20at%2019.18.08%20%284%29-9ZSXTvo4zcLQje5BZdV1qs2gRCpbr4.jpeg" alt="Dining Hall Interior">
+            <div class="gallery-item" onclick="openModal(this)">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-06-27%20at%2019.18.08%20%284%29-9ZSXTvo4zcLQje5BZdV1qs2gRCpbr4.jpeg" alt="Gallery Image 2">
                 <div class="gallery-overlay">
-                    <div class="zoom-icon">🔍</div>
+                    <span class="zoom-icon">🔍</span>
                 </div>
             </div>
-            <div class="gallery-item">
-                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-06-27%20at%2019.18.07%20%285%29-yTozBKRsfsIYnMNxAvg7NmCoSEx6YO.jpeg" alt="Luxurious Reception">
+            <div class="gallery-item" onclick="openModal(this)">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-06-27%20at%2019.18.07%20%285%29-yTozBKRsfsIYnMNxAvg7NmCoSEx6YO.jpeg" alt="Gallery Image 3">
                 <div class="gallery-overlay">
-                    <div class="zoom-icon">🔍</div>
+                    <span class="zoom-icon">🔍</span>
                 </div>
             </div>
-            <div class="gallery-item">
-                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-06-27%20at%2019.18.07%20%284%29-AkvKCgHrW9Pi4r33sgkOpCwVSBl2i9.jpeg" alt="Premium Restroom">
+            <div class="gallery-item" onclick="openModal(this)">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-06-27%20at%2019.18.07%20%284%29-AkvKCgHrW9Pi4r33sgkOpCwVSBl2i9.jpeg" alt="Gallery Image 4">
                 <div class="gallery-overlay">
-                    <div class="zoom-icon">🔍</div>
+                    <span class="zoom-icon">🔍</span>
                 </div>
             </div>
-            <div class="gallery-item">
-                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-06-27%20at%2019.18.06%20%283%29-DZPoesevvbytj4TQa9LVQB0mRD8nKV.jpeg" alt="Elegant Corridor">
+            <div class="gallery-item" onclick="openModal(this)">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-06-27%20at%2019.18.06%20%283%29-DZPoesevvbytj4TQa9LVQB0mRD8nKV.jpeg" alt="Gallery Image 5">
                 <div class="gallery-overlay">
-                    <div class="zoom-icon">🔍</div>
+                    <span class="zoom-icon">🔍</span>
                 </div>
             </div>
         </div>
@@ -1017,73 +1176,66 @@
 
     <!-- Gallery Modal -->
     <div id="galleryModal" class="modal">
-        <span class="close">&times;</span>
+        <span class="close" onclick="closeModal()">&times;</span>
         <div class="modal-content">
-            <img id="modalImg" src="" alt="">
+            <img id="modalImage" src="" alt="Gallery Image">
         </div>
     </div>
 
     <!-- Why Choose Us -->
     <section class="why-choose">
-        <h2 class="section-title">Why Choose Royal Delight</h2>
+        <div class="section-title">Why Choose Royal Delight</div>
         <div class="why-grid">
+            <div class="why-item">
+                <div class="why-icon">✨</div>
+                <h3>Premium Quality</h3>
+                <p>Sourced finest ingredients and exceptional craftsmanship in every dish</p>
+            </div>
             <div class="why-item">
                 <div class="why-icon">👑</div>
                 <h3>Royal Experience</h3>
-                <p>Feel like royalty with our exceptional treatment and attention to detail in every aspect of your visit.</p>
+                <p>Luxurious ambiance with world-class service and attention to detail</p>
             </div>
             <div class="why-item">
-                <div class="why-icon">🎨</div>
-                <h3>Artistic Excellence</h3>
-                <p>Every element from decor to presentation is a masterpiece designed to delight your senses.</p>
+                <div class="why-icon">🎯</div>
+                <h3>Expert Team</h3>
+                <p>Passionate professionals dedicated to creating unforgettable moments</p>
             </div>
             <div class="why-item">
                 <div class="why-icon">🌟</div>
-                <h3>Unforgettable Memories</h3>
-                <p>Create lasting memories in an environment that celebrates luxury and sophistication.</p>
-            </div>
-            <div class="why-item">
-                <div class="why-icon">💎</div>
-                <h3>Premium Quality</h3>
-                <p>We accept nothing less than perfection in every dish, service interaction, and experience.</p>
+                <h3>Exclusive Vibes</h3>
+                <p>Intimate setting designed for sophisticated entertainment and celebration</p>
             </div>
         </div>
     </section>
 
     <!-- Testimonials -->
     <section class="testimonials">
-        <h2 class="section-title">Guest Reviews</h2>
+        <div class="section-title">Guest Testimonials</div>
         <div class="testimonials-grid">
             <div class="testimonial-card">
                 <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"The most luxurious dining experience I've ever had. Every detail was perfect, from the decor to the impeccable service!"</p>
-                <div class="testimonial-author">- Priya Sharma</div>
+                <p class="testimonial-text">"Royal Delight exceeded all expectations. The ambiance is mesmerizing and the food is simply outstanding. Truly a royal experience!"</p>
+                <p class="testimonial-author">- Rajesh Kumar</p>
             </div>
             <div class="testimonial-card">
                 <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"Royal Delight truly lives up to its name. The ambiance is breathtaking, and the food is absolutely divine."</p>
-                <div class="testimonial-author">- Rajesh Kumar</div>
+                <p class="testimonial-text">"An exceptional dining experience with impeccable service. Every detail speaks of luxury and elegance. Highly recommended!"</p>
+                <p class="testimonial-author">- Priya Sharma</p>
             </div>
             <div class="testimonial-card">
                 <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"An exquisite celebration of elegance and taste. We felt pampered throughout our entire visit. Highly recommended!"</p>
-                <div class="testimonial-author">- Anjali Patel</div>
+                <p class="testimonial-text">"The sophistication and elegance of Royal Delight is unmatched. Perfect venue for special celebrations and fine dining."</p>
+                <p class="testimonial-author">- Amit Patel</p>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
-        <h2 class="section-title">Get In Touch</h2>
+        <div class="section-title">Get In Touch</div>
         <div class="contact-content">
             <div class="contact-info">
-                <div class="contact-item">
-                    <div class="contact-icon">📍</div>
-                    <div class="contact-details">
-                        <h3>Address</h3>
-                        <p>12, Maheshwari Building<br>National Highway<br>Sarvamangala Pally</p>
-                    </div>
-                </div>
                 <div class="contact-item">
                     <div class="contact-icon">📞</div>
                     <div class="contact-details">
@@ -1092,36 +1244,43 @@
                     </div>
                 </div>
                 <div class="contact-item">
-                    <div class="contact-icon">💬</div>
+                    <div class="contact-icon">📍</div>
                     <div class="contact-details">
-                        <h3>WhatsApp</h3>
-                        <p>+91 758-587-7902</p>
+                        <h3>Address</h3>
+                        <p>12, Maheshwari Building, National Highway, Sarvamangala Pally</p>
                     </div>
                 </div>
                 <div class="contact-item">
-                    <div class="contact-icon">⏰</div>
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-details">
+                        <h3>Email</h3>
+                        <p>info@royaldelight.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🕐</div>
                     <div class="contact-details">
                         <h3>Hours</h3>
-                        <p>Mon - Sun: 11:00 AM - 11:00 PM<br>Special events available on request</p>
+                        <p>Open Daily: 12 PM - 11 PM</p>
                     </div>
                 </div>
             </div>
-            <form class="contact-form">
+            <form class="contact-form" onsubmit="handleSubmit(event)">
                 <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required>
+                    <label>Full Name</label>
+                    <input type="text" required placeholder="Your name">
                 </div>
                 <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" required>
+                    <label>Phone Number</label>
+                    <input type="tel" required placeholder="Your phone number">
                 </div>
                 <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required>
+                    <label>Email Address</label>
+                    <input type="email" required placeholder="Your email">
                 </div>
                 <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" required></textarea>
+                    <label>Message</label>
+                    <textarea required placeholder="Your message..."></textarea>
                 </div>
                 <button type="submit" class="submit-btn">Send Message</button>
             </form>
@@ -1129,14 +1288,14 @@
     </section>
 
     <!-- Map Section -->
-    <div class="map-section">
+    <section class="map-section">
         <div class="map-container">
-            <h2 class="section-title">Find Us</h2>
+            <div class="section-title" style="margin-bottom: 2rem;">Find Us</div>
             <div class="map-wrapper">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3800.6841835246!2d78.4744!3d17.3669!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91f5f5f5f5f5%3A0x5f5f5f5f5f5f5f5f!2s12%20Maheshwari%20Building%2C%20National%20Highway%2C%20Sarvamangala%20Pally!5e0!3m2!1sen!2sin!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.5479999999998!2d72.5!3d19!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7b7b7b7b7b7%3A0x0!2sRoyal%20Delight!5e0!3m2!1sen!2sin!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Footer -->
     <footer>
@@ -1149,117 +1308,81 @@
                 <a href="#contact">Contact</a>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Royal Delight. All rights reserved. | Premium Luxury Dining Experience</p>
+                <p>&copy; 2026 Royal Delight. All Rights Reserved.</p>
+                <p>Experience Timeless Elegance & Culinary Excellence</p>
             </div>
         </div>
     </footer>
 
     <!-- Floating Buttons -->
-    <div class="whatsapp-btn floating-btn" id="whatsappBtn">
-        <span>💬</span>
-    </div>
-    <div class="call-btn floating-btn" id="callBtn">
-        <span>📞</span>
-    </div>
+    <a href="https://wa.me/917585877902" target="_blank" class="floating-btn whatsapp-btn" title="Chat on WhatsApp">
+        💬
+    </a>
+    <a href="tel:+917585877902" class="floating-btn call-btn" title="Call Us">
+        ☎️
+    </a>
 
     <script>
-        // Mobile Menu Toggle
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
+        // Hamburger Menu
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
 
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
 
         // Close menu when link is clicked
-        navLinks.querySelectorAll('a').forEach(link => {
+        document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
             });
         });
 
         // Gallery Modal
-        const modal = document.getElementById('galleryModal');
-        const modalImg = document.getElementById('modalImg');
-        const closeBtn = document.querySelector('.close');
+        function openModal(element) {
+            const modal = document.getElementById('galleryModal');
+            const modalImage = document.getElementById('modalImage');
+            const image = element.querySelector('img');
+            modalImage.src = image.src;
+            modal.style.display = 'block';
+        }
 
-        document.querySelectorAll('.gallery-item').forEach(item => {
-            item.addEventListener('click', function() {
-                modal.style.display = 'block';
-                modalImg.src = this.querySelector('img').src;
-            });
-        });
-
-        closeBtn.addEventListener('click', () => {
+        function closeModal() {
+            const modal = document.getElementById('galleryModal');
             modal.style.display = 'none';
-        });
+        }
 
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.style.display = 'none';
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('galleryModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeModal();
             }
         });
 
-        // WhatsApp Button
-        document.getElementById('whatsappBtn').addEventListener('click', () => {
-            window.open('https://wa.me/917585877902', '_blank');
-        });
-
-        // Call Button
-        document.getElementById('callBtn').addEventListener('click', () => {
-            window.location.href = 'tel:+917585877902';
-        });
-
         // Form Submission
-        document.querySelector('.contact-form').addEventListener('submit', (e) => {
-            e.preventDefault();
+        function handleSubmit(event) {
+            event.preventDefault();
             alert('Thank you for your message! We will get back to you soon.');
-            document.querySelector('.contact-form').reset();
-        });
+            event.target.reset();
+        }
 
-        // Smooth scroll behavior
+        // Smooth Scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth' });
                 }
             });
-        });
-
-        // Parallax effect on hero
-        window.addEventListener('scroll', () => {
-            const hero = document.querySelector('.hero');
-            let scrollPosition = window.pageYOffset;
-            if (scrollPosition < window.innerHeight) {
-                hero.style.backgroundPosition = `center ${scrollPosition * 0.5}px`;
-            }
-        });
-
-        // Add scroll animations to sections
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('section').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(30px)';
-            section.style.transition = 'all 0.8s ease';
-            observer.observe(section);
         });
     </script>
 </body>
