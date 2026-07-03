@@ -15,13 +15,16 @@
         }
 
         :root {
-            --primary-gold: #D4AF37;
-            --dark-burgundy: #800020;
-            --deep-black: #0a0a0a;
-            --cream: #F5F1E8;
+            --primary-gold: #C59963;
+            --dark-burgundy: #1a0033;
+            --deep-black: #0d0015;
+            --cream: #EDE5DD;
             --white: #FFFFFF;
-            --light-gray: #2a2a2a;
-            --light-cream: #FFFBF7;
+            --light-gray: #2d1b4a;
+            --light-cream: #F9F6F0;
+            --royal-purple: #4a2775;
+            --royal-plum: #6b3b8a;
+            --accent-gold: #D4A574;
         }
 
         body {
@@ -49,7 +52,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(10, 10, 10, 0.98);
+            background: rgba(13, 0, 21, 0.98);
             backdrop-filter: blur(15px);
             padding: 1.2rem 2rem;
             display: flex;
@@ -57,7 +60,7 @@
             align-items: center;
             z-index: 1000;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            border-bottom: 1px solid rgba(197, 153, 99, 0.2);
         }
 
         .logo {
@@ -257,19 +260,31 @@
         /* Floating Buttons */
         .floating-btn {
             position: fixed;
-            width: 65px;
-            height: 65px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
-            cursor: pointer;
+            font-size: 1.5rem;
+            text-decoration: none;
             z-index: 999;
-            box-shadow: 0 8px 35px rgba(0, 0, 0, 0.5);
             transition: all 0.3s ease;
-            border: 2px solid var(--primary-gold);
-            animation: float 3s ease-in-out infinite;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            bottom: 120px;
+            right: 25px;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: scale(1.15) rotate(10deg);
+            box-shadow: 0 12px 50px rgba(37, 211, 102, 0.6);
         }
 
         @keyframes float {
@@ -294,15 +309,15 @@
         }
 
         .call-btn {
-            background: linear-gradient(135deg, var(--dark-burgundy), #600015);
+            background: linear-gradient(135deg, var(--royal-purple), var(--dark-burgundy));
             color: var(--white);
             bottom: 30px;
             right: 25px;
         }
-
+        
         .call-btn:hover {
-            transform: scale(1.15);
-            box-shadow: 0 12px 50px rgba(128, 0, 32, 0.6);
+            transform: scale(1.15) rotate(-10deg);
+            box-shadow: 0 12px 50px rgba(75, 39, 117, 0.6);
         }
 
         /* Sections */
@@ -984,10 +999,56 @@
                 flex-direction: column;
             }
 
-            .btn {
-                padding: 0.8rem 1.5rem;
-                font-size: 0.8rem;
-            }
+        .btn {
+            padding: 1rem 2.5rem;
+            border: 2px solid var(--accent-gold);
+            background: transparent;
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            font-size: 0.95rem;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent-gold), rgba(212, 165, 116, 0.8));
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+
+        .btn:hover {
+            color: var(--deep-black);
+            box-shadow: 0 10px 40px rgba(197, 153, 99, 0.4);
+            transform: translateY(-3px);
+        }
+
+        .btn:hover::before {
+            left: 0;
+        }
+
+        .btn-secondary {
+            border-color: var(--royal-purple);
+            color: var(--royal-purple);
+        }
+
+        .btn-secondary::before {
+            background: linear-gradient(135deg, var(--royal-purple), rgba(75, 39, 117, 0.8));
+        }
+
+        .btn-secondary:hover {
+            color: var(--white);
+            box-shadow: 0 10px 40px rgba(107, 59, 138, 0.4);
+        }
 
             section {
                 padding: 2.5rem 1rem;
@@ -1294,9 +1355,9 @@
     <section class="map-section">
         <div class="map-container">
             <div class="section-title" style="margin-bottom: 2rem;">Find Us</div>
-            <div class="map-wrapper">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.5479999999998!2d72.5!3d19!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7b7b7b7b7b7%3A0x0!2sRoyal%20Delight!5e0!3m2!1sen!2sin!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+          <div class="map-wrapper">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.9452841208344!2d72.5159!3d19.1135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7cfffffff%3A0x0!2sThe%20Royal%20Delight!5e0!3m2!1sen!2sin!4v1719481987654" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
         </div>
     </section>
 
@@ -1317,13 +1378,18 @@
         </div>
     </footer>
 
-    <!-- Floating Buttons -->
-    <a href="https://wa.me/917585877902" target="_blank" class="floating-btn whatsapp-btn" title="Chat on WhatsApp">
-        💬
-    </a>
-    <a href="tel:+917585877902" class="floating-btn call-btn" title="Call Us">
-        ☎️
-    </a>
+  <!-- Floating Buttons -->
+  <a href="https://wa.me/917585877902" target="_blank" class="floating-btn whatsapp-btn" title="Chat on WhatsApp">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 21l1.65-5.27A9 9 0 1 1 15 3h-2a9 9 0 0 0 -8 15.23z" fill="white"/>
+      <path d="M9 10h.01M15 13h.01" stroke="white" stroke-width="2"/>
+    </svg>
+  </a>
+  <a href="tel:+917585877902" class="floating-btn call-btn" title="Call Us">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" fill="white"/>
+    </svg>
+  </a>
 
     <script>
         // Hamburger Menu
